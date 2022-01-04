@@ -4,4 +4,4 @@
 
 
 ## Рузультати виконання програми
-![1-1 result](https://github.com/whiteman1989/EMPI_Lab_work_1/blob/master/images/1-1.jpg?raw=true)
+![1-1 result](https://github.com/whiteman1989/EMPI_Lab_work_1/blob/master/docs/1-1.jpg?raw=true)
