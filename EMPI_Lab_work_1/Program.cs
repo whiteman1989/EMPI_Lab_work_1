@@ -6,15 +6,39 @@ sample.PrintIntegralFrequency();
 sample.PrintMode();
 sample.PrintAvg();
 sample.PrintMedian();
+sample.OnPropertiChanged += sample.StringChangedHandler;
+sample.Name = "Alex";
+sample.OnPropertiChanged += s => Console.WriteLine("Nev string length is: " + s.Length);
+sample.Name = "Oleg";
+sample.OnPropertiChanged -= sample.StringChangedHandler;
+sample.Name = "Andrey";
+
 
 
 public class Sample
 {
 
-    #region Properties: Private
+    #region Fields: Private
 
     List<int> _numsInSample = new List<int>();
     private readonly static int _numberInGroup = 1;
+
+    #endregion
+
+    #region Properties: Public
+    private int _count = 0;
+    private string _name;
+    public string Name
+    {
+        get { return _name + _count; }
+        set 
+        {
+            _name = value;
+            OnPropertiChanged?.Invoke(value);
+        }
+    }
+
+    public string SeconName { get; set; }
 
     #endregion
 
@@ -106,5 +130,12 @@ public class Sample
     }
 
     #endregion
+
+    public Action<string> OnPropertiChanged;
+
+    public void StringChangedHandler(string val)
+    {
+        Console.WriteLine("New value is: " + val);
+    }
 
 }
