@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "EMPI_Lab_work_1": {
+      "commandName": "Project"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "environmentVariables": {},
+      "distributionName": ""
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
